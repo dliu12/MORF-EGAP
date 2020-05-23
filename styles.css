@@ -1,0 +1,511 @@
+html {
+  background: url("textures/qbkls/qbkls.png"), rgba(225, 225, 225, 0.65);
+  background-blend-mode: screen,normal;
+  background-repeat: repeat;
+  background-size: 700px 700px;
+}
+
+body {
+  position: relative;
+  border: 5px solid #0C0C0C;
+  max-width: 750px;
+  width: 100%;
+  height: auto;
+  margin: 10px auto 0 auto;
+}
+
+body #shadow {
+  position: absolute;
+  background-color: #0C0C0C;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  opacity: 0.20;
+  z-index: -1;
+  top: 5px;
+  left: 2px;
+  border: 5px solid #0C0C0C;
+  background-color: #e1e1e1;
+}
+
+body header {
+  text-align: center;
+}
+
+body header #title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px auto 0 auto;
+  padding: 0 20px 0 20px;
+  background-color: rgba(25, 25, 25, 0.2);
+  text-shadow: 5px 2px rgba(225, 225, 225, 0.55);
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 60px;
+}
+
+@media screen and (max-width: 500px) {
+  body header #title {
+    font-size: 40px;
+  }
+}
+
+body header #description {
+  width: 75%;
+  margin: 10px auto 0 auto;
+  text-shadow: 5px 2px rgba(225, 225, 225, 0.55);
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  body header #description {
+    font-size: 12px;
+  }
+}
+
+body header #citations {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+#survey-form {
+  margin-top: 20px;
+  font-family: 'Roboto Slab', serif;
+}
+
+#survey-form fieldset {
+  display: contents;
+}
+
+#survey-form ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#survey-form #survey-item1 {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px (1fr)[6];
+      grid-template-columns: 50px repeat(6, 1fr);
+  -ms-grid-rows: 50px 1fr;
+      grid-template-rows: 50px 1fr;
+      grid-template-areas: 'label label label label label label label' 'check image image description description select count';
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  #survey-form #survey-item1 {
+    -ms-grid-columns: 25px 3fr 2fr 1fr;
+        grid-template-columns: 25px 3fr 2fr 1fr;
+    -ms-grid-rows: 25px 1fr 1fr;
+        grid-template-rows: 25px 1fr 1fr;
+        grid-template-areas: 'label label label label' 'check image image image' '. description select count';
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+#survey-form #survey-item2 {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px (1fr)[6];
+      grid-template-columns: 50px repeat(6, 1fr);
+  -ms-grid-rows: 50px 1fr;
+      grid-template-rows: 50px 1fr;
+      grid-template-areas: 'label label label label label label label' 'check image image description description select count';
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  #survey-form #survey-item2 {
+    -ms-grid-columns: 25px 3fr 2fr 1fr;
+        grid-template-columns: 25px 3fr 2fr 1fr;
+    -ms-grid-rows: 25px 1fr 1fr;
+        grid-template-rows: 25px 1fr 1fr;
+        grid-template-areas: 'label label label label' 'check image image image' '. description select count';
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+#survey-form #survey-item3 {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px (1fr)[6];
+      grid-template-columns: 50px repeat(6, 1fr);
+  -ms-grid-rows: 50px 1fr;
+      grid-template-rows: 50px 1fr;
+      grid-template-areas: 'label label label label label label label' 'check image image description description select count';
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  #survey-form #survey-item3 {
+    -ms-grid-columns: 25px 3fr 2fr 1fr;
+        grid-template-columns: 25px 3fr 2fr 1fr;
+    -ms-grid-rows: 25px 1fr 1fr;
+        grid-template-rows: 25px 1fr 1fr;
+        grid-template-areas: 'label label label label' 'check image image image' '. description select count';
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+#survey-form .labels {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: label;
+  padding-left: 10px;
+  font-weight: bolder;
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 25px;
+  text-shadow: 5px 2px rgba(25, 25, 25, 0.2);
+}
+
+@media screen and (max-width: 500px) {
+  #survey-form .labels {
+    font-size: 20px;
+  }
+}
+
+#survey-form .check {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: check;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+}
+
+#survey-form .image {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: image;
+  width: 100%;
+}
+
+#survey-form .image img {
+  max-width: 250px;
+  min-width: 75px;
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+}
+
+#survey-form .description {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-area: description;
+}
+
+#survey-form .description p {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0 5px 0 5px;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+  #survey-form .description p {
+    font-size: 13px;
+  }
+}
+
+#survey-form .description .price {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#survey-form .select {
+  position: relative;
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+  grid-area: select;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 'area1 area2' 'area3 area3';
+  row-gap: 5px;
+  font-size: 12px;
+}
+
+#survey-form .select li:first-child {
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: area1;
+}
+
+#survey-form .select li:nth-child(1) {
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: area2;
+}
+
+#survey-form .select li:last-child {
+  position: relative;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: area3;
+}
+
+#survey-form .select li:last-child select {
+  -webkit-box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+  max-width: 90%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#survey-form .count {
+  -ms-grid-row: 2;
+  -ms-grid-column: 7;
+  grid-area: count;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#survey-form .count li:first-child {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  #survey-form .count li:first-child {
+    font-size: 13px;
+  }
+}
+
+#survey-form .count li:last-child {
+  -webkit-box-shadow: 10px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 10px 8px rgba(25, 25, 25, 0.2);
+  max-width: 75%;
+}
+
+#survey-form .count li:last-child input {
+  width: 100%;
+  text-align: right;
+}
+
+#survey-form .shadow1 {
+  position: absolute;
+  background-color: #0C0C0C;
+  width: 11px;
+  height: 12px;
+  border-radius: 3px;
+  opacity: 0.20;
+  z-index: -1;
+  top: 5px;
+  left: 2px;
+  top: 5px;
+  left: 8px;
+}
+
+#survey-form .shadow2 {
+  position: absolute;
+  background-color: #0C0C0C;
+  width: 11px;
+  height: 12px;
+  border-radius: 5px;
+  opacity: 0.20;
+  z-index: -1;
+  top: 5px;
+  left: 2px;
+  top: 5px;
+  left: 8px;
+}
+
+#contact-info {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 25px (1fr)[5];
+      grid-template-rows: 25px repeat(5, 1fr);
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  grid-gap: 10px 10px;
+      grid-template-areas: 'label label' 'name textarea' 'email textarea' 'phone textarea' 'submit textarea' '. .';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: right;
+  background-color: rgba(25, 25, 25, 0.2);
+}
+
+@media screen and (max-width: 500px) {
+  #contact-info {
+    font-size: 14px;
+  }
+}
+
+#contact-info label {
+  font-weight: bolder;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-shadow: 5px 2px rgba(225, 225, 225, 0.55);
+}
+
+#contact-info #contactLabel {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: label;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  #contact-info #contactLabel {
+    font-size: 15px;
+  }
+}
+
+#contact-info #userName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+#contact-info #userEmail {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: email;
+}
+
+#contact-info #userPhone {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: phone;
+}
+
+#contact-info #userPhone input::-webkit-outer-spin-button, #contact-info #userPhone input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#contact-info #userPhone input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#contact-info #submit {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: submit;
+  -webkit-box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+}
+
+#contact-info #userComment {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 2;
+  grid-area: textarea;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 65%;
+  height: 75%;
+}
+
+#contact-info #userComment textarea {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  resize: none;
+  -webkit-box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+  background: url("textures/noise_pattern_with_crosslines/noise_pattern_with_crosslines.png"), rgba(42, 42, 42, 0.55);
+  background-blend-mode: screen,normal;
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  color: dimgray;
+  font-family: 'Roboto Slab', serif;
+}
+
+@media screen and (max-width: 700px) {
+  #contact-info #userComment {
+    padding: 0 0 5px 0;
+    width: 85%;
+    height: 85%;
+  }
+}
+
+#contact-info input {
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  -webkit-box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+          box-shadow: 5px 8px rgba(25, 25, 25, 0.2);
+  width: 100%;
+  background: url("textures/noise_pattern_with_crosslines/noise_pattern_with_crosslines.png"), rgba(42, 42, 42, 0.55);
+  background-blend-mode: screen,normal;
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  color: dimgray;
+  font-family: 'Roboto Slab', serif;
+}
+
+#contact-info #submit {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  font-family: 'Roboto Slab', serif;
+  background-color: rgba(13, 116, 23, 0.5);
+}
+
+@media screen and (max-width: 700px) {
+  #contact-info #submit {
+    padding: 0 0 5px 0;
+    width: 85%;
+    height: 85%;
+  }
+}
+
+#contact-info #submit:hover {
+  background-color: rgba(13, 116, 23, 0.75);
+}
+
+@media screen and (max-width: 700px) {
+  #contact-info li {
+    padding: 0 0 5px 0;
+    width: 85%;
+    height: 85%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

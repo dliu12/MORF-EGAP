@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="A form page to immitate shopping cart">
+        <meta name="keywords" content="Form, shopping cart, Javascript, HTML, CSS">
+        <meta name="author" content="Diyi Liu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div id="shadow"></div>
+        <header>
+            <h1 id="title">MORF EGAP</h1>
+            <h3 id="description">Welcome to Morf Egap! Select the items you would like to purchase and proceed to check out. </h3>
+            <h6 id="citations">Note: all images are obtained from Google.</h6>
+        </header>
+
+        <form id="survey-form">
+            <div id="items">
+                <div id="survey-item1">
+                    <fieldset>
+                        <div class="labels">
+                            <label for="item1">Journal Cover</label>
+                        </div>
+    
+                        <div class="check">
+                            <div class=shadow1></div>
+                            <input type="checkbox" name="item1" value="Journal Cover">
+                        </div>
+    
+                        <div class="image">
+                            <img src="Images/JournalCover.jpg" alt="image of journal convers">
+                        </div>
+    
+                        <div class="description">
+                            <p class="itemDescription">Journal Covers</p>
+                            <p class="price">$10.99</p>
+                        </div>
+    
+                        <ul class="select">
+                            <li>
+                                <div class="shadow2"></div>
+                                <input type="radio" id="cover-A5" value="A5" name="cover-size" checked="checked">
+                                <label for="cover-A5">A5</label>
+                            </li>
+                            
+                            <li>
+                                <div class="shadow2"></div>
+                                <input type="radio" id="cover-B6" value="B6" name="cover-size">
+                                <label for="cover-B6">B6</label>
+                            </li>
+
+                            <li>
+                                <select id="dropdown">
+                                    <option value="burgendy">Burgundy</option>
+                                    <option value="red">Red</option>
+                                    <option value="black">Black</option>
+                                    <option value="blue">Blue</option>
+                                </select>
+                            </li>
+                        </ul>
+                        
+                        <ul class="count">
+                            <li>
+                                <label for="cover-qt">Count.</label>
+                            </li>
+                            <li>
+                                <input type="number" id="cover-qt" value="1" min="0" max="99">
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+                <div id="survey-item2"> 
+                    <fieldset>
+                        <div class="labels">
+                            <label for="item2">Filler Book</label>
+                        </div>
+
+                        <div class="check">
+                            <div class=shadow1></div>
+                            <input type="checkbox" name="item2" value="Journal filler paper">
+                        </div>
+                        
+                        <div class="image">
+                            <img src="Images/JournalInsert.jpg" alt="image of filler book">
+                        </div>   
+                            
+                        <div class="description">
+                            <p class="itemDescription">item Description</p>
+                            <p class="price">$7.99</p>
+                        </div>
+                        
+                        <ul class="select">
+                            <li>
+                                <div class="shadow2"></div>
+                                <input type="radio" id="paper-A5" value="A5" name="paper-size" checked="checked">
+                                <label for="paper-A5">A5</label>
+                            </li>
+
+                            <li>
+                                <div class="shadow2"></div>
+                                <input type="radio" id="paper-B6" value="B6" name="paper-size">
+                                <label for="paper-B6">B6</label>
+                            </li>
+
+                            <li>
+                                <select id="dropdown2">
+                                    <option value="Planner">Planner</option>
+                                    <option value="grided">Grided</option>
+                                    <option value="lined">Lined</option>
+                                    <option value="blank">Blank</option>
+                                </select>
+                            </li>
+                        </ul>
+                            
+                        <ul class="count">
+                            <li>
+                                <label for="paper-qt">Count.</label>
+                            </li>
+
+                            <li>
+                                <input type="number" id="paper-qt" value="1" min="0" max="99">
+                            </li>
+                        </ul>             
+                    </fieldset>
+                </div>
+
+                <div id="survey-item3">
+                    <fieldset>
+                        <div class="labels">
+                            <label for="item3">Fountain Pen</label>
+                        </div>
+
+                        <div class="check">
+                            <div class=shadow1></div>
+                            <input type="checkbox" name="item3" value="Fountain pen">
+                        </div>
+                        
+                        <div class="image">
+                            <img src="Images/foutainPen.jpg" alt="image of fountain pen">
+                        </div>
+                        
+                        <div class="description">
+                            <p class="itemDescription">item Description</p>
+                            <p class="price">$12.99</p>
+                        </div>
+
+                        <ul class="select">
+                            <li>
+                                <div class="shadow2"></div>
+                                <input type="radio" id="pen-fine" value="fine" name="pen-size" checked="checked">
+                                <label for="pen-fine">F</label>
+                            </li>
+
+                            <li>
+                                <div class="shadow2"></div>
+                                <input type="radio" id="pen-med" value="med" name="pen-size">
+                                <label for="pen-mid">M</label> 
+                            </li>
+
+                            <li>
+                                <select id="dropdown3">
+                                    <option value="steelGray">Steel Gray</option>
+                                    <option value="marbleBlack">Marble Black</option>
+                                    <option value="roseGold">Rose Gold</option>
+                                </select>  
+                            </li>
+                        </ul>
+                        
+                        <ul class="count">
+                            <li>
+                                <label for="pen-qt">Count.</label>
+                            </li>
+
+                            <li>
+                                <input type="number" id="pen-qt" value="1" min="0" max="49">  
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+
+            <ul id="contact-info">
+                <label id="contactLabel" for="contact-info">Fill in your contact information below:</label>
+                <fieldset>
+                    <li id="userName">
+                        <label id="name-label">Name:</label>
+                        <input id="name" type="text" value="Lynn Lin">
+                    </li>
+
+                    <li id="userEmail">
+                        <label id="email-label">Email:</label>
+                        <input id="email" type="email" value="xyz@somewhere.com">
+                    </li>
+
+                    <li id="userPhone">
+                        <label id="number-label">Phone:</label>
+                        <input id="number" type="number" value="7184567890"> 
+                    </li>
+                   
+                    <li id="userComment">
+                        <textarea id="additionComment">Any comments?</textarea>
+                    </li>
+                </fieldset>
+
+                <button id="submit" type="submit">Proceed to Payment</button>     
+            </ul>
+        </form>
+    </body>
+</html>

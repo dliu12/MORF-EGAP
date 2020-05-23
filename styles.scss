@@ -1,0 +1,325 @@
+$testBorder: 1px solid red;
+$generalBackgroundSize: 700px 700px;
+$backgroundSize:300px 300px;
+$borders: 5px solid #0C0C0C;
+$centerMargin: 10px auto 0 auto;
+$textShadow:5px 2px rgba(225,225,225,0.55);
+$shadowBackgroundColor:rgba(25,25,25,0.20);
+$backgroundColor:rgba(255,255,255,1);
+$box-shadow:5px 8px $shadowBackgroundColor;
+@mixin shadows($width,$height,$border-radius){
+    position:absolute;
+    background-color:#0C0C0C;
+    width:$width;
+    height:$height;
+    border-radius: $border-radius;
+    opacity: 0.20;
+    z-index:-1;
+    top:5px;
+    left:2px;
+}
+@mixin background($link,$gradient,$size){
+    background:$link,$gradient;
+    background-blend-mode: screen,normal;
+    background-repeat: repeat;
+    background-size:$size;
+}
+@mixin media($size){
+    @media screen and (max-width:500px){
+        font-size:$size;
+    }
+}
+@mixin mediaGrid{
+    @media screen and (max-width:500px){
+        grid-template-columns:25px 3fr 2fr 1fr;
+        grid-template-rows:25px 1fr 1fr;
+        grid-template-areas:'label label label label'
+                            'check image image image'
+                            '. description select count';
+        column-gap: 10px;
+        row-gap:10px;
+    }
+}
+@mixin mediaPadding{
+    @media screen and (max-width:700px){
+        padding:0 0 5px 0;
+        width:85%;
+        height:85%;
+    }
+}
+
+html{
+    @include background(url("textures/qbkls/qbkls.png"),rgba(225,225,225,0.65),$generalBackgroundSize);
+}
+
+body{
+    position:relative;
+    border:$borders;
+    max-width:750px;
+    width:100%;
+    height:auto;
+    margin:$centerMargin;
+    #shadow{
+        @include shadows(100%,100%,0);
+        border:$borders;
+        background-color:rgba(225,225,225,1);
+    }
+    header{
+        text-align:center;
+        #title{
+            width:fit-content;
+            margin:$centerMargin;
+            padding:0 20px 0 20px;
+            background-color:$shadowBackgroundColor;
+            text-shadow: $textShadow;
+            font-family: 'Advent Pro', sans-serif;
+            font-size:60px;
+            @include media(40px);
+        }
+        #description{
+            width:75%;
+            margin:$centerMargin;
+            text-shadow: $textShadow;
+            font-family: 'Roboto Slab', serif;
+            font-size:15px;
+            @include media(12px)
+        }
+        #citations{
+            margin:0;
+            padding:0;
+            font-size:11px;
+            font-weight:lighter;
+
+        }
+    }
+}
+
+#survey-form{
+    margin-top:20px;
+    font-family:'Roboto Slab', serif;
+    fieldset{
+        display:contents;
+    }
+    
+    ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+    }
+
+    @for $i from 1 through 3 {
+        #survey-item#{$i}{
+            width:100%;
+            min-height:250px;
+            height:auto;
+            display:grid;
+            grid-template-columns:50px repeat(6,1fr);
+            grid-template-rows:50px 1fr;
+            grid-template-areas:'label label label label label label label'
+                                'check image image description description select count';
+            column-gap: 20px;
+            @include mediaGrid;
+        }
+    }
+
+    .labels{
+        grid-area:label;
+        padding-left:10px;
+        font-weight:bolder;
+        font-family: 'Advent Pro', sans-serif;
+        font-size:25px;
+        @include media(20px);
+
+        text-shadow:5px 2px $shadowBackgroundColor;
+    }
+    .check{
+        grid-area:check;
+        justify-self:center;
+        position: relative;
+    }
+    .image{
+        grid-area:image;
+        width:100%;
+        img{
+            max-width:250px;
+            min-width:75px;
+            width:100%;
+            height:auto;
+            box-shadow: $box-shadow;
+        }
+    }
+    .description{
+        grid-area:description;
+        p{
+            margin:0;
+            margin-bottom:10px;
+            padding:0 5px 0 5px;
+            background-color:$backgroundColor;
+            box-shadow: $box-shadow;
+            font-size:14px;
+            @include media(13px);
+        }
+        .price{
+            width: fit-content;
+        }
+    }
+    .select{
+        position: relative;
+        grid-area:select;
+        justify-self: center;
+        display:grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns:repeat(2,1fr);
+        grid-template-areas:'area1 area2'
+                            'area3 area3';
+        row-gap:5px;
+        font-size:12px;
+        
+        li:first-child{
+            position: relative;
+            grid-area:area1;
+        }
+        li:nth-child(1){
+            position:relative;
+            grid-area:area2;
+        }
+        li:last-child{
+            position:relative;
+            grid-area:area3;
+            select{
+                box-shadow:$box-shadow;
+                max-width:90%;
+                justify-self: center;
+            }
+        }
+    }
+    .count{
+        grid-area:count;
+        justify-self: center;
+        
+        li:first-child{
+            margin-bottom:5px;
+            @include media(13px);
+        }
+
+        li:last-child{
+            box-shadow:10px 8px $shadowBackgroundColor;
+            max-width:75%;
+            input{
+                width:100%;
+                text-align: right;
+            }
+        }
+    }
+    .shadow1{
+        @include shadows(11px,12px,3px);
+        top:5px;
+        left:8px;
+    }
+    .shadow2{
+        @include shadows(11px,12px,5px);
+        top:5px;
+        left:8px;
+
+    }
+
+}
+
+#contact-info{
+    // border:$testBorder;
+    width:100%;
+    height:auto;
+    display:grid;
+    grid-template-rows:25px repeat(5,1fr);
+    grid-template-columns: 1fr 2fr;
+    grid-gap:10px 10px;
+    grid-template-areas:'label label'
+                        'name textarea'
+                        'email textarea'
+                        'phone textarea'
+                        'submit textarea'
+                        '. .';
+    align-items:center;
+    justify-items:right;
+    background-color: $shadowBackgroundColor;
+    @include media(14px);
+
+    label{
+        font-weight:bolder;
+        justify-self: center;
+        text-shadow: $textShadow;
+    }
+    #contactLabel{
+        grid-area:label;
+        font-size:20px;
+        @include media(15px);
+    }
+    #userName{
+        grid-area:name;
+    }
+    #userEmail{
+        grid-area:email;
+    }
+    #userPhone{
+        grid-area:phone;
+       
+        input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+    #submit{
+        grid-area:submit;
+        box-shadow: $box-shadow;
+    }
+
+    #userComment{
+        grid-area:textarea;
+        align-self: start;
+        justify-self: center;
+        width:65%;
+        height:75%;
+        textarea{
+            width:100%;
+            height:100%;
+            outline:none;
+            resize:none;
+            box-shadow: $box-shadow;
+            @include background(url("textures/noise_pattern_with_crosslines/noise_pattern_with_crosslines.png"),rgba(42,42,42,0.55),$backgroundSize);
+            color:rgba(105,105,105,1);
+            font-family: 'Roboto Slab', serif;
+        }
+        @include mediaPadding;
+    }
+
+    input{
+        border:none;
+        outline:none;
+        padding-left:5px;
+        box-shadow: $box-shadow;
+        width:100%;
+        @include background(url("textures/noise_pattern_with_crosslines/noise_pattern_with_crosslines.png"),rgba(42,42,42,0.55),$backgroundSize);
+        color:rgba(105,105,105,1);
+        font-family: 'Roboto Slab', serif;
+    }
+
+    #submit{
+        border:none;
+        border-radius:5px;
+        outline:none;
+        padding:10px;
+        font-family: 'Roboto Slab', serif;
+        background-color:rgba(13,116,23,0.5);
+        @include mediaPadding;
+    }
+    #submit:hover{
+        background-color:rgba(13,116,23,0.75);
+    }
+
+    li{
+        @include mediaPadding;
+    }
+}
